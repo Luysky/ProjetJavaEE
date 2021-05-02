@@ -535,8 +535,8 @@
         </outbound-socket-binding>
     </socket-binding-group>
     <deployments>
-        <deployment name="TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war" runtime-name="TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war">
-            <fs-archive path="D:\Programmation\Intellij doc\HES_635-1_JEE_Cours\Labs\TP12-WEB-EJB-PC-EPC-E-solution\target\TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war"/>
+        <deployment name="TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT" runtime-name="TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war">
+            <fs-exploded path="C:\Users\Kevin\Documents\Coding\ProjectJavaEE\labs\library\target\TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT"/>
         </deployment>
     </deployments>
 </server>
