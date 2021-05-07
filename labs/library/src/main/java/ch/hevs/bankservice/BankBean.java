@@ -15,7 +15,8 @@ import ch.hevs.businessobject.Client;
 
 @Stateful
 public class BankBean implements Bank {
-	
+
+	//Supprimer le Extended -> pas recommendé
 	@PersistenceContext(name = "BankPU", type=PersistenceContextType.EXTENDED)
 
 	//ENTITY MANAGER
