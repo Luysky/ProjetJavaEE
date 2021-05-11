@@ -790,9 +790,12 @@
             and see if it works, or build your own.
             </p><p>
                 To use the supplied <tt class="filename">hsqldb.jar</tt>, just skip to
-                the <a href="#instance_setup-section" title="
-            Setting up a Hsqldb Persistent Database Instance and a Hsqldb
-            Server
+                the <a href="#instance_setup-section" title="
+
+            Setting up a Hsqldb Persistent Database Instance and a Hsqldb
+
+            Server
+
         "> next section of this 
             document</a>.
             Otherwise build a new <tt class="filename">hsqldb.jar</tt>.
@@ -1360,8 +1363,10 @@ HSQLDB_OWNER=hsqldb
                 Re-run the script with each of the possible arguments to really
                 test it good.
                 If anything doesn't work right, then see the
-                <a href="#initscriptTrouble-section" title="
-                Troubleshooting the Init Script
+                <a href="#initscriptTrouble-section" title="
+
+                Troubleshooting the Init Script
+
             ">
                 Troubleshooting the Init Script
             </a> section.
@@ -1978,7 +1983,8 @@ HSQLDB_OWNER=hsqldb
     unsuccessful connection attempts when the application is under heavy
     load.</p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N10E76"></a>Upgrading Databases</h2></div></div><div></div></div><p>Any database not produced with the release version of HSQLDB 1.8.0
     must be upgraded to this version. This includes databases created with the
-    RC versions of 1.8.0. The instructions under the <a href="#upgrade_via_script-section" title="Upgrading Using the SCRIPT
+    RC versions of 1.8.0. The instructions under the <a href="#upgrade_via_script-section" title="Upgrading Using the SCRIPT
+
       Command">Upgrading Using the SCRIPT
       Command</a>
     section should be followed in all cases.</p><p>Once a database is upgraded to 1.8.0, it can no longer be used with
@@ -2623,7 +2629,8 @@ java org.hsqldb.util.SqlTool --driver oracle.jdbc.OracleDriver urlid</pre></div>
             save the very first such value obtained to the binary buffer
             and will not display any output from this query.
             You can then save the binary value to a file, as explained in the
-          <a href="#binary_files-section" title="
+          <a href="#binary_files-section" title="
+
                 Storing and retrieving binary files">
                 Storing and retrieving binary files</a>
             section.
@@ -2641,7 +2648,8 @@ java org.hsqldb.util.SqlTool --driver oracle.jdbc.OracleDriver urlid</pre></div>
             You can use SqlTool to load any binary object into a database
             by telling SqlTool to get the insert/update datum from a file.
             This is also explained in the
-          <a href="#binary_files-section" title="
+          <a href="#binary_files-section" title="
+
                 Storing and retrieving binary files">
                 Storing and retrieving binary files</a>
             section.
@@ -2884,7 +2892,8 @@ driver com.sybase.jdbc3.jdbc.SybDriver
         </p><div class="variablelist"><dl><dt><span class="term">charset</span></dt><dd>
                 This is used by the SqlTool program, but not by the
                 DatabaseManager programs.
-                See the <a href="#charencoding-section" title="
+                See the <a href="#charencoding-section" title="
+
                 Character Encoding">
                 Character Encoding</a> section of the
                 <a href="#nonint-section" title="Non-Interactive">Non-Interactive</a>
@@ -4917,7 +4926,7 @@ SELECT * FROM t1;
       SELECT m.mid mid, m.name name, t.mealtype mt, a.aid aid,
              a.gname + ' ' + a.sname author, m.description description,
              m.asof asof
-        FROM meals m, mealtypes t, authors a
+        FROM meals m, mealtypes t, writers a
        WHERE m.mealtype = t.mealtype
         AND m.aid = a.aid;</pre></div><p>You can then reference mealsjv in statements in the same way you
       would reference a table:</p><div class="informalexample"><pre class="programlisting">    SELECT * FROM mealsjv;</pre></div><p>A view can reference another view. For example, mealsjv presents

@@ -10,6 +10,7 @@ import javax.naming.NamingException;
 
 import ch.hevs.bankservice.Bank;
 import ch.hevs.businessobject.Account;
+import ch.hevs.businessobject.Book;
 import ch.hevs.businessobject.Client;
 
 /**
@@ -30,6 +31,7 @@ public class TransferBean
     private String transactionResult;
     private int transactionAmount;
     private Bank bank;
+	private String message;
     
     @PostConstruct
     public void initialize() throws NamingException {
@@ -37,7 +39,11 @@ public class TransferBean
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
 		bank = (Bank) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank");
-			
+
+		message = "Click to populate DB ! One time only !";
+
+		populateDatabase();
+
     	// get clients
 		List<Client> clientList = bank.getClients();
 		this.clientNames = new ArrayList<String>();
@@ -51,8 +57,62 @@ public class TransferBean
 		List<Account> accounts = bank.getAccountListFromClientLastname(clientList.get(0).getLastname());
 		this.sourceAccountDescriptions.add(accounts.get(0).getDescription());
 		this.destinationAccountDescriptions.add(accounts.get(0).getDescription());
+
+
+
     }
-    
+
+	public void populateDatabase() {
+
+
+
+    	bank.populateDatabase();
+
+
+    	/*
+		// get destinations
+		List<Book> bookList = bank.g
+		this.destinationsNames = new ArrayList<String>();
+		for (Destination destination : destinationList) {
+			this.destinationsNames.add(destination.getName());
+		}
+
+		// get all flights
+		allFlights = travel.getAllFlights();
+
+		//get users
+		passengers = new ArrayList<Passenger>();
+		try {
+			passengers = travel.getPassengers();
+		}catch(Exception e) {
+			System.out.println("Error with users");
+		}
+
+		// History
+		history = new ArrayList<Booking>();
+		try {
+			history = travel.getPassengerHistory();
+		}catch(Exception e) {
+			System.out.println("There is no history yet");
+		}
+
+
+		//get all bookings
+		try {
+			bookings = travel.getBookings();
+		}catch(Exception e) {
+			System.out.println("There is no bookings yet");
+		}
+
+*/
+
+	}
+
+
+
+
+
+
     // transactionAmount
     public int getTransactionAmount () {
     	return transactionAmount;

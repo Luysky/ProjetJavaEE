@@ -755,7 +755,7 @@
       SELECT m.mid mid, m.name name, t.mealtype mt, a.aid aid,
              a.gname + ' ' + a.sname author, m.description description,
              m.asof asof
-        FROM meals m, mealtypes t, authors a
+        FROM meals m, mealtypes t, writers a
        WHERE m.mealtype = t.mealtype
         AND m.aid = a.aid;</programlisting>
       </informalexample>

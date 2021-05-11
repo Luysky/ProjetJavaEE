@@ -3302,7 +3302,7 @@ which must contain exactly one <code>&lt;flow-id&gt;</code> element.</p>
     <xsd:annotation>
       <xsd:documentation><![CDATA[
 
-       <p> The "supported-locale" element allows authors to declare
+       <p> The "supported-locale" element allows writers to declare
         which locales are supported in this application instance.</p>
         
         <p>It must be specified as :language:[_:country:[_:variant:]]

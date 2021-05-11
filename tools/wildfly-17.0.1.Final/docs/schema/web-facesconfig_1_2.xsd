@@ -1891,7 +1891,7 @@
         <xsd:annotation>
             <xsd:documentation>
 
-                The "supported-locale" element allows authors to declare
+                The "supported-locale" element allows writers to declare
                 which locales are supported in this application instance.
 
                 It must be specified as :language:[_:country:[_:variant:]]

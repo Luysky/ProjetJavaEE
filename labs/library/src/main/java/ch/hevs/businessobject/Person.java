@@ -1,13 +1,9 @@
 package ch.hevs.businessobject;
 
-import javax.persistence.*;
 
-//@Entity
 public class Person {
 
-    //@Id
-  //  @GeneratedValue (strategy = GenerationType.SEQUENCE)
-//    protected long id;
+
     public String firstname;
     public String lastname;
 
@@ -18,20 +14,10 @@ public class Person {
     }
 
     public Person(String firstname, String lastname) {
-        //this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
     }
-/*
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
- */
 
     public String getFirstname() {
         return firstname;

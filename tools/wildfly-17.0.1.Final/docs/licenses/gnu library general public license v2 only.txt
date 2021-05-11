@@ -18,7 +18,7 @@ free software--to make sure the software is free for all its users.
 
   This license, the Library General Public License, applies to some
 specially designated Free Software Foundation software, and to any
-other libraries whose authors decide to use it.  You can use it for
+other libraries whose writers decide to use it.  You can use it for
 your libraries, too.
 
   When we speak of free software, we are referring to freedom, not
@@ -50,7 +50,7 @@ that everyone understands that there is no warranty for this free
 library.  If the library is modified by someone else and passed on, we
 want its recipients to know that what they have is not the original
 version, so that any problems introduced by others will not reflect on
-the original authors' reputations.
+the original writers' reputations.
 
   Finally, any free program is threatened constantly by software
 patents.  We wish to avoid the danger that companies distributing free

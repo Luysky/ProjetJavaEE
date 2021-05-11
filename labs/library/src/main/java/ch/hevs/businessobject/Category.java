@@ -10,29 +10,30 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private int idCategory;
 
     private String genre;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "category", cascade = { CascadeType.PERSIST })
+    //@JoinColumn(name = "book_fk",nullable = false)
     private Set<Book> book;
 
     public Category(){
 
     }
 
-    public Category(Long id, String genre, Set<Book> book) {
-        this.id = id;
+    public Category(int idCategory, String genre) {
+        this.idCategory = idCategory;
         this.genre = genre;
-        this.book = book;
+        //this.book = book;
     }
 
-    public Long getId() {
-        return id;
+    public int getId() {
+        return idCategory;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int idCategory) {
+        this.idCategory = idCategory;
     }
 
     public String getGenre() {

@@ -8,17 +8,18 @@ import java.util.Set;
 @Table(name="Member")
 public class Member extends Person {
 
-@Id
-@GeneratedValue(strategy = GenerationType.SEQUENCE)
-private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idMember;
 
-@Embedded
-private Address address;
-public String phoneNumber;
-public String email;
+    @Embedded
+    private Address address;
+    public String phoneNumber;
+    public String email;
 
-@OneToMany
-private Set<Book> borrowedBook;
+    @OneToMany(mappedBy = "borrower", cascade = { CascadeType.PERSIST })
+    //@JoinColumn(name = "book_fk",nullable = false)
+    private Set<Book> borrowedBook;
 
 
     public Member() {
@@ -26,22 +27,22 @@ private Set<Book> borrowedBook;
     }
 
 
-    public Member(String firstname, String lastname, Long id, Address address,
-                  String phoneNumber, String email, Set<Book> borrowedBook) {
+    public Member(String firstname, String lastname, int idMember,
+                  String phoneNumber, String email) {
         super(firstname, lastname);
-        this.id = id;
-        this.address = address;
+        this.idMember = idMember;
+        //this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.borrowedBook = borrowedBook;
+        //this.borrowedBook = borrowedBook;
     }
 
-    public Long getId() {
-        return id;
+    public int getId() {
+        return idMember;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int id) {
+        this.idMember = idMember;
     }
 
     public Address getAddress() {

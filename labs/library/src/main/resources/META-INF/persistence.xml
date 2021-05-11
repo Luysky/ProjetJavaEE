@@ -10,6 +10,15 @@
 		
 		<class>ch.hevs.businessobject.Client</class>
 		<class>ch.hevs.businessobject.Account</class>
+
+		<class>ch.hevs.businessobject.Address</class>
+		<class>ch.hevs.businessobject.Writer</class>
+		<class>ch.hevs.businessobject.Book</class>
+		<class>ch.hevs.businessobject.Category</class>
+		<class>ch.hevs.businessobject.Member</class>
+		<class>ch.hevs.businessobject.Person</class>
+
+
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" /> 

@@ -238,7 +238,7 @@
       SELECT m.mid mid, m.name name, t.mealtype mt, a.aid aid,
              a.gname + ' ' + a.sname author, m.description description,
              m.asof asof
-        FROM meals m, mealtypes t, authors a
+        FROM meals m, mealtypes t, writers a
        WHERE m.mealtype = t.mealtype
         AND m.aid = a.aid;</pre></div><p>You can then reference mealsjv in statements in the same way you
       would reference a table:</p><div class="informalexample"><pre class="programlisting">    SELECT * FROM mealsjv;</pre></div><p>A view can reference another view. For example, mealsjv presents

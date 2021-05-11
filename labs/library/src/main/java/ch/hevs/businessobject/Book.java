@@ -9,24 +9,33 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private int idBook;
 
 
     private String isbn;
 
     //relation
-    @ManyToMany(mappedBy = "Book", cascade = { CascadeType.PERSIST })
-    private Set<Author> authors;
+    @ManyToMany
+    @JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idBook"),
+                inverseJoinColumns = @JoinColumn(name = "idWriter"))
+    //@JoinColumn(name = "writer_fk",nullable = false)
+    private Set<Writer> writers;
 
     //relation
-    @ManyToMany(mappedBy = "Book", cascade = { CascadeType.PERSIST })
-    private Set<Category> categories;
+    @ManyToOne
+    //@JoinColumn(name = "category_fk",nullable = false)
+    private Category category;
+
+    @ManyToOne
+    //@JoinColumn(name = "member_fk",nullable = false)
+    private Member borrower;
 
     private String title;
     private String language;
     private String description;
     private int numberOfPages;
-    private boolean borrowed;
+    //private boolean borrowed;
+
 
 
     public Book(){
@@ -34,25 +43,26 @@ public class Book {
     }
 
 
-    public Book(Long id, String isbn, Set<Author> authors, Set<Category> categories,
-                String title, String language, String description, int numberOfPages, boolean borrowed) {
-        this.id = id;
+    public Book(int idBook, String isbn,
+                String title, String language, String description,
+                int numberOfPages) {
+        this.idBook = idBook;
         this.isbn = isbn;
-        this.authors = authors;
-        this.categories = categories;
+        //this.writers = writers;
+        //this.category = category;
         this.title = title;
         this.language = language;
         this.description = description;
         this.numberOfPages = numberOfPages;
-        this.borrowed = borrowed;
+        //this.borrower = borrower;
     }
 
-    public Long getId() {
-        return id;
+    public int getId() {
+        return idBook;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int idBook) {
+        this.idBook = idBook;
     }
 
     public String getIsbn() {
@@ -63,20 +73,20 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Set<Author> getAuthors() {
-        return authors;
+    public Set<Writer> getWriters() {
+        return writers;
     }
 
-    public void setAuthors(Set<Author> authors) {
-        this.authors = authors;
+    public void setWriters(Set<Writer> writers) {
+        this.writers = writers;
     }
 
-    public Set<Category> getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(Set<Category> categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -111,11 +121,12 @@ public class Book {
         this.numberOfPages = numberOfPages;
     }
 
-    public boolean isBorrowed() {
-        return borrowed;
+    public Member getBorrower() {
+        return borrower;
     }
 
-    public void setBorrowed(boolean borrowed) {
-        this.borrowed = borrowed;
+    public void setBorrower(Member borrower) {
+        this.borrower = borrower;
     }
+
 }

@@ -11,9 +11,18 @@
         <h:outputLabel value="Welcome to Geneva Bank"></h:outputLabel>
         <br></br>
         <h:form>
+
+            <div style="width:100px; margin:auto">
+                <h:commandButton value="Populate" action="#{transferBean.populateDatabase}" class="btn btn-danger">
+                </h:commandButton>
+                <h:outputText value="#{bookBean.message}" />
+            </div>
+
         <h:commandLink action="transferForm">
          <h:outputText value="Start new transfer" />
         </h:commandLink>
+
+
         </h:form>
     </ui:define>
 </ui:composition>

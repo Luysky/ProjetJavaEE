@@ -1,2 +1,20 @@
+CREATE USER SA PASSWORD "" ADMIN
+/*C1*/SET SCHEMA PUBLIC
+CONNECT USER SA
+create table Book (idBook integer not null, description varchar(255), isbn varchar(255), language varchar(255), numberOfPages integer not null, title varchar(255), borrower_idMember integer, category_idCategory integer, primary key (idBook))
+create table Book_Writer (idWriter integer not null, idBook integer not null, primary key (idBook, idWriter))
+create table Category (idCategory integer not null, genre varchar(255), primary key (idCategory))
+create table Client (id bigint not null, prenom varchar(255), nom varchar(255), primary key (id))
+create table Compte (id bigint not null, description varchar(255), numero varchar(255), solde bigint, FK_CLIENT bigint, primary key (id))
+create table Member (idMember integer not null, city varchar(255), number varchar(255), postalCode varchar(255), street varchar(255), email varchar(255), phoneNumber varchar(255), primary key (idMember))
+create table Writer (idWriter integer not null, biography varchar(255), primary key (idWriter))
+create sequence hibernate_sequence start with 1 increment by 1
+alter table Book add constraint FK2bl5fffwpg4lmpwffxa8iqdt7 foreign key (borrower_idMember) references Member
+alter table Book add constraint FKjgdkicjq5lqunsv71d4o0xgxh foreign key (category_idCategory) references Category
+alter table Book_Writer add constraint FKqhg5214dgh5wkspcjnswocfpv foreign key (idBook) references Book
+alter table Book_Writer add constraint FK7mgggisraabix747al0b5xtp foreign key (idWriter) references Writer
+alter table Compte add constraint FKomm1pjpsvc89376n9250f6ri7 foreign key (FK_CLIENT) references Client
+SET AUTOCOMMIT FALSE
 /*C2*/SET SCHEMA PUBLIC
 CONNECT USER SA
+DISCONNECT
