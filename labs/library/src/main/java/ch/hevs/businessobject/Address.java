@@ -2,6 +2,7 @@ package ch.hevs.businessobject;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Set;
 

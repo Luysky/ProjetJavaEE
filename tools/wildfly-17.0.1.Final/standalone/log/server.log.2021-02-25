@@ -306,10 +306,10 @@
 	...]
 2019-09-06 09:17:05,180 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -329,11 +329,11 @@
 2019-09-06 09:17:06,703 INFO  [stdout] (ServerService Thread Pool -- 26) Hibernate: alter table Compte add constraint FKomm1pjpsvc89376n9250f6ri7 foreign key (FK_CLIENT) references Client
 2019-09-06 09:17:06,862 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-2) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
 2019-09-06 09:17:06,866 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated
-2019-09-06 09:17:07,235 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:17:07,235 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
-2019-09-06 09:17:07,308 WARN  [org.jboss.weld.Validator] (MSC service thread 1-5) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:17:07,308 WARN  [org.jboss.weld.Validator] (MSC service thread 1-5) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
 2019-09-06 09:17:07,463 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 26) Initializing Mojarra 2.3.9.SP02 for context '/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT'
 2019-09-06 09:17:08,064 WARNING [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 26) JSF1025: [/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT] Context initialization parameter 'facelets.VIEW_MAPPINGS' is deprecated.  The option will still be configured, but please use 'javax.faces.FACELETS_VIEW_MAPPINGS' in the future.
@@ -368,10 +368,10 @@
 	...]
 2019-09-06 09:18:31,517 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -480,11 +480,11 @@ Caused by: java.sql.SQLException: Constraint already exists in statement [alter 
 
 2019-09-06 09:18:31,761 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated
 2019-09-06 09:18:31,769 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-2) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
-2019-09-06 09:18:31,939 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:18:31,939 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
-2019-09-06 09:18:31,979 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:18:31,979 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
 2019-09-06 09:18:32,029 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 87) Initializing Mojarra 2.3.9.SP02 for context '/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT'
 2019-09-06 09:18:32,342 WARNING [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 87) JSF1025: [/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT] Context initialization parameter 'facelets.VIEW_MAPPINGS' is deprecated.  The option will still be configured, but please use 'javax.faces.FACELETS_VIEW_MAPPINGS' in the future.
@@ -509,10 +509,10 @@ Caused by: java.sql.SQLException: Constraint already exists in statement [alter 
 	...]
 2019-09-06 09:31:19,736 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP13-WEB-SECURE-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -724,10 +724,10 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 	...]
 2019-09-06 09:32:42,715 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP13-WEB-SECURE-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -747,11 +747,11 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2019-09-06 09:32:44,092 INFO  [stdout] (ServerService Thread Pool -- 11) Hibernate: alter table Compte add constraint FKomm1pjpsvc89376n9250f6ri7 foreign key (FK_CLIENT) references Client
 2019-09-06 09:32:44,223 INFO  [io.smallrye.metrics] (MSC service thread 1-1) MicroProfile: Metrics activated
 2019-09-06 09:32:44,255 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-1) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
-2019-09-06 09:32:44,616 WARN  [org.jboss.weld.Validator] (MSC service thread 1-1) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:32:44,616 WARN  [org.jboss.weld.Validator] (MSC service thread 1-1) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
-2019-09-06 09:32:44,676 WARN  [org.jboss.weld.Validator] (MSC service thread 1-4) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 09:32:44,676 WARN  [org.jboss.weld.Validator] (MSC service thread 1-4) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
 2019-09-06 09:32:44,826 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 11) Initializing Mojarra 2.3.9.SP02 for context '/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT'
 2019-09-06 09:32:45,388 WARNING [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 11) JSF1025: [/TP13-WEB-SECURE-E-0.0.1-SNAPSHOT] Context initialization parameter 'facelets.VIEW_MAPPINGS' is deprecated.  The option will still be configured, but please use 'javax.faces.FACELETS_VIEW_MAPPINGS' in the future.
@@ -1369,10 +1369,10 @@ OPVDX001: Validation error in standalone.xml -----------------------------------
 	...]
 2019-09-06 12:05:53,857 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP14-MDB-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -1393,11 +1393,11 @@ OPVDX001: Validation error in standalone.xml -----------------------------------
 2019-09-06 12:05:55,195 INFO  [stdout] (ServerService Thread Pool -- 21) Hibernate: alter table Compte add constraint FKomm1pjpsvc89376n9250f6ri7 foreign key (FK_CLIENT) references Client
 2019-09-06 12:05:55,363 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-6) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
 2019-09-06 12:05:55,375 INFO  [io.smallrye.metrics] (MSC service thread 1-6) MicroProfile: Metrics activated
-2019-09-06 12:05:55,730 WARN  [org.jboss.weld.Validator] (MSC service thread 1-6) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 12:05:55,730 WARN  [org.jboss.weld.Validator] (MSC service thread 1-6) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
-2019-09-06 12:05:55,804 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 12:05:55,804 WARN  [org.jboss.weld.Validator] (MSC service thread 1-2) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
 2019-09-06 12:05:55,951 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 21) Initializing Mojarra 2.3.9.SP02 for context '/TP14-MDB-E-0.0.1-SNAPSHOT'
 2019-09-06 12:05:56,530 WARNING [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 21) JSF1025: [/TP14-MDB-E-0.0.1-SNAPSHOT] Context initialization parameter 'facelets.VIEW_MAPPINGS' is deprecated.  The option will still be configured, but please use 'javax.faces.FACELETS_VIEW_MAPPINGS' in the future.
@@ -1509,7 +1509,7 @@ Caused by: java.lang.IllegalStateException: WFLYEE0042: Failed to construct comp
 	at org.jboss.as.web-common@17.0.1.Final//org.jboss.as.web.common.WebInjectionContainer.newInstance(WebInjectionContainer.java:77)
 	at org.jboss.as.jsf-injection//org.jboss.as.jsf.injection.JSFInjectionProvider.invokePostConstruct(JSFInjectionProvider.java:68)
 	... 89 more
-Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.TransferBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.TransferBean@447663d8
+Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.RentBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.RentBean@447663d8
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.invokeMethods(DefaultLifecycleCallbackInvoker.java:85)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.postConstruct(DefaultLifecycleCallbackInvoker.java:66)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.BasicInjectionTarget.postConstruct(BasicInjectionTarget.java:122)
@@ -1544,7 +1544,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length
 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
 	at java.base/java.util.Objects.checkIndex(Objects.java:372)
 	at java.base/java.util.ArrayList.get(ArrayList.java:458)
-	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:51)
+	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:51)
 	... 119 more
 
 2019-09-06 12:06:25,844 ERROR [io.undertow.request] (default task-1) UT005023: Exception handling request to /TP14-MDB-E-0.0.1-SNAPSHOT/faces/welcomeBank.xhtml: javax.servlet.ServletException: An error occurred performing resource injection on managed bean transferBean
@@ -1653,7 +1653,7 @@ Caused by: java.lang.IllegalStateException: WFLYEE0042: Failed to construct comp
 	at org.jboss.as.web-common@17.0.1.Final//org.jboss.as.web.common.WebInjectionContainer.newInstance(WebInjectionContainer.java:77)
 	at org.jboss.as.jsf-injection//org.jboss.as.jsf.injection.JSFInjectionProvider.invokePostConstruct(JSFInjectionProvider.java:68)
 	... 89 more
-Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.TransferBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.TransferBean@447663d8
+Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.RentBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.RentBean@447663d8
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.invokeMethods(DefaultLifecycleCallbackInvoker.java:85)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.postConstruct(DefaultLifecycleCallbackInvoker.java:66)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.BasicInjectionTarget.postConstruct(BasicInjectionTarget.java:122)
@@ -1688,7 +1688,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length
 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
 	at java.base/java.util.Objects.checkIndex(Objects.java:372)
 	at java.base/java.util.ArrayList.get(ArrayList.java:458)
-	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:51)
+	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:51)
 	... 119 more
 
 2019-09-06 12:10:26,152 INFO  [org.jboss.as.repository] (management-handler-thread - 2) WFLYDR0001: Content added at location /Users/Adrien/Downloads/wildfly-17.0.1.Final/standalone/data/content/18/660dad7a23ff0ccf08eb74a1650b479dd6ca1f/content
@@ -1706,10 +1706,10 @@ Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length
 	...]
 2019-09-06 12:10:27,487 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'BankBean' in deployment unit 'deployment "TP14-MDB-E-0.0.1-SNAPSHOT.war"' are as follows:
 
-	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank
-	java:module/BankBean!ch.hevs.bankservice.Bank
-	ejb:/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank?stateful
+	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank
+	java:module/BankBean!ch.hevs.libraryservice.Bank
+	ejb:/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.libraryservice.Bank?stateful
 	java:global/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean
 	java:app/TP14-MDB-E-0.0.1-SNAPSHOT/BankBean
 	java:module/BankBean
@@ -1819,11 +1819,11 @@ Caused by: java.sql.SQLException: Constraint already exists: FKOMM1PJPSVC89376N9
 
 2019-09-06 12:10:27,713 WARN  [org.jboss.weld.Bootstrap] (MSC service thread 1-6) WELD-000146: BeforeBeanDiscovery.addAnnotatedType(AnnotatedType<?>) used for class com.sun.faces.flow.FlowDiscoveryCDIHelper is deprecated from CDI 1.1!
 2019-09-06 12:10:27,715 INFO  [io.smallrye.metrics] (MSC service thread 1-6) MicroProfile: Metrics activated
-2019-09-06 12:10:27,871 WARN  [org.jboss.weld.Validator] (MSC service thread 1-6) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 12:10:27,871 WARN  [org.jboss.weld.Validator] (MSC service thread 1-6) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
-2019-09-06 12:10:27,892 WARN  [org.jboss.weld.Validator] (MSC service thread 1-3) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.TransferBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
-	at ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:0)
+2019-09-06 12:10:27,892 WARN  [org.jboss.weld.Validator] (MSC service thread 1-3) WELD-001471: Interceptor method initialize defined on class ch.hevs.managedbeans.RentBean is not defined according to the specification. It should not throw javax.naming.NamingException, which is a checked exception.
+	at ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:0)
   StackTrace
 2019-09-06 12:10:27,937 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 92) Initializing Mojarra 2.3.9.SP02 for context '/TP14-MDB-E-0.0.1-SNAPSHOT'
 2019-09-06 12:10:28,278 WARNING [javax.enterprise.resource.webcontainer.jsf.config] (ServerService Thread Pool -- 92) JSF1025: [/TP14-MDB-E-0.0.1-SNAPSHOT] Context initialization parameter 'facelets.VIEW_MAPPINGS' is deprecated.  The option will still be configured, but please use 'javax.faces.FACELETS_VIEW_MAPPINGS' in the future.
@@ -1936,7 +1936,7 @@ Caused by: java.lang.IllegalStateException: WFLYEE0042: Failed to construct comp
 	at org.jboss.as.web-common@17.0.1.Final//org.jboss.as.web.common.WebInjectionContainer.newInstance(WebInjectionContainer.java:77)
 	at org.jboss.as.jsf-injection//org.jboss.as.jsf.injection.JSFInjectionProvider.invokePostConstruct(JSFInjectionProvider.java:68)
 	... 89 more
-Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.TransferBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.TransferBean@1ca08ba0
+Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.RentBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.RentBean@1ca08ba0
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.invokeMethods(DefaultLifecycleCallbackInvoker.java:85)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.postConstruct(DefaultLifecycleCallbackInvoker.java:66)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.BasicInjectionTarget.postConstruct(BasicInjectionTarget.java:122)
@@ -1971,7 +1971,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length
 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
 	at java.base/java.util.Objects.checkIndex(Objects.java:372)
 	at java.base/java.util.ArrayList.get(ArrayList.java:458)
-	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:51)
+	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:51)
 	... 119 more
 
 2019-09-06 12:11:34,158 ERROR [io.undertow.request] (default task-1) UT005023: Exception handling request to /TP14-MDB-E-0.0.1-SNAPSHOT/faces/welcomeBank.xhtml: javax.servlet.ServletException: An error occurred performing resource injection on managed bean transferBean
@@ -2080,7 +2080,7 @@ Caused by: java.lang.IllegalStateException: WFLYEE0042: Failed to construct comp
 	at org.jboss.as.web-common@17.0.1.Final//org.jboss.as.web.common.WebInjectionContainer.newInstance(WebInjectionContainer.java:77)
 	at org.jboss.as.jsf-injection//org.jboss.as.jsf.injection.JSFInjectionProvider.invokePostConstruct(JSFInjectionProvider.java:68)
 	... 89 more
-Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.TransferBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.TransferBean@1ca08ba0
+Caused by: org.jboss.weld.exceptions.WeldException: WELD-000049: Unable to invoke public void ch.hevs.managedbeans.RentBean.initialize() throws javax.naming.NamingException on ch.hevs.managedbeans.RentBean@1ca08ba0
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.invokeMethods(DefaultLifecycleCallbackInvoker.java:85)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.DefaultLifecycleCallbackInvoker.postConstruct(DefaultLifecycleCallbackInvoker.java:66)
 	at org.jboss.weld.core@3.1.1.Final//org.jboss.weld.injection.producer.BasicInjectionTarget.postConstruct(BasicInjectionTarget.java:122)
@@ -2115,7 +2115,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length
 	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
 	at java.base/java.util.Objects.checkIndex(Objects.java:372)
 	at java.base/java.util.ArrayList.get(ArrayList.java:458)
-	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.TransferBean.initialize(TransferBean.java:51)
+	at deployment.TP14-MDB-E-0.0.1-SNAPSHOT.war//ch.hevs.managedbeans.RentBean.initialize(TransferBean.java:51)
 	... 119 more
 
 2019-09-06 12:13:06,394 INFO  [stdout] (default task-1) Hibernate: select client0_.id as id1_0_, client0_.prenom as prenom2_0_, client0_.nom as nom3_0_ from Client client0_

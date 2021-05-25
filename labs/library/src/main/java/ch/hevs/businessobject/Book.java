@@ -14,12 +14,18 @@ public class Book {
 
     private String isbn;
 
+
+
     //relation
+    //@ManyToMany(mappedBy = "writtenBooks", cascade = { CascadeType.PERSIST })
     @ManyToMany
     @JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idBook"),
                 inverseJoinColumns = @JoinColumn(name = "idWriter"))
     //@JoinColumn(name = "writer_fk",nullable = false)
     private Set<Writer> writers;
+
+
+
 
     //relation
     @ManyToOne
@@ -73,6 +79,8 @@ public class Book {
         this.isbn = isbn;
     }
 
+
+
     public Set<Writer> getWriters() {
         return writers;
     }
@@ -80,6 +88,8 @@ public class Book {
     public void setWriters(Set<Writer> writers) {
         this.writers = writers;
     }
+
+
 
     public Category getCategory() {
         return category;

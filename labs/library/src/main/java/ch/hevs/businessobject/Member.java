@@ -12,6 +12,9 @@ public class Member extends Person {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idMember;
 
+    //private String firstname;
+    //private String lastname;
+
     @Embedded
     private Address address;
     public String phoneNumber;
@@ -31,6 +34,8 @@ public class Member extends Person {
                   String phoneNumber, String email) {
         super(firstname, lastname);
         this.idMember = idMember;
+        //this.firstname = firstname;
+        //this.lastname = lastname;
         //this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;

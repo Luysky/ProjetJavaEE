@@ -1,6 +1,12 @@
 package ch.hevs.businessobject;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.MappedSuperclass;
 
+import static javax.persistence.InheritanceType.JOINED;
+
+@MappedSuperclass
 public class Person {
 
 
@@ -13,10 +19,12 @@ public class Person {
 
     }
 
+
     public Person(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
 
 
     public String getFirstname() {

@@ -3,6 +3,7 @@ package ch.hevs.businessobject;
 import javax.persistence.*;
 import java.util.Set;
 
+
 @Entity
 @Table(name="Writer")
 public class Writer extends Person {
@@ -11,11 +12,16 @@ public class Writer extends Person {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idWriter;
 
+
+
     //@ManyToMany(mappedBy = "writers", cascade = { CascadeType.PERSIST })
-    @ManyToMany
-    @JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idWriter"),
-            inverseJoinColumns = @JoinColumn(name = "idBook"))
+    @ManyToMany(mappedBy = "writers", cascade = { CascadeType.PERSIST })
+    //@JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idWriter"),
+    //        inverseJoinColumns = @JoinColumn(name = "idBook"))
     private Set<Book> writtenBooks;
+
+
+
 
     private String biography;
 
@@ -26,7 +32,7 @@ public class Writer extends Person {
 
     public Writer(String firstname, String lastname, int idWriter,
                    String biography) {
-        super(firstname, lastname);
+        //super(firstname, lastname);
         this.idWriter = idWriter;
         //this.writtenBooks = writtenBooks;
         this.biography = biography;
@@ -40,19 +46,19 @@ public class Writer extends Person {
         this.idWriter = idWriter;
     }
 
-    /*
+
     public Set<Book> getWrittenBooks() {
         return writtenBooks;
     }
 
-     */
 
-    /*
+
+
     public void setWrittenBooks(Set<Book> writtenBooks) {
         this.writtenBooks = writtenBooks;
     }
 
-     */
+
 
     public String getBiography() {
         return biography;
