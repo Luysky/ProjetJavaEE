@@ -1,20 +1,22 @@
 CREATE USER SA PASSWORD "" ADMIN
 /*C1*/SET SCHEMA PUBLIC
 CONNECT USER SA
-create table Book (idBook integer not null, description varchar(255), isbn varchar(255), language varchar(255), numberOfPages integer not null, title varchar(255), borrower_idMember integer, category_idCategory integer, primary key (idBook))
-create table Book_Writer (idBook integer not null, idWriter integer not null, primary key (idBook, idWriter))
+create table Book (idBook integer not null, description varchar(255), isbn varchar(255), language varchar(255), numberOfPages integer not null, title varchar(255), borrower_idMember integer, category_idCategory integer, writer_idWriter integer, primary key (idBook))
 create table Category (idCategory integer not null, genre varchar(255), primary key (idCategory))
 create table Member (idMember integer not null, firstname varchar(255), lastname varchar(255), city varchar(255), number varchar(255), postalCode varchar(255), street varchar(255), email varchar(255), phoneNumber varchar(255), primary key (idMember))
 create table Writer (idWriter integer not null, firstname varchar(255), lastname varchar(255), biography varchar(255), primary key (idWriter))
 create sequence hibernate_sequence start with 1 increment by 1
 alter table Book add constraint FK2bl5fffwpg4lmpwffxa8iqdt7 foreign key (borrower_idMember) references Member
 alter table Book add constraint FKjgdkicjq5lqunsv71d4o0xgxh foreign key (category_idCategory) references Category
-alter table Book_Writer add constraint FK7mgggisraabix747al0b5xtp foreign key (idWriter) references Writer
-alter table Book_Writer add constraint FKqhg5214dgh5wkspcjnswocfpv foreign key (idBook) references Book
+alter table Book add constraint FKph45tred5biysdx55ugkjuojh foreign key (writer_idWriter) references Writer
 SET AUTOCOMMIT FALSE
-INSERT INTO MEMBER VALUES(3,'Thomas','Luyet','Sion','8','1950','Chemin du D\u00e9sespoir','thomas@hes.ch','0798483545')
 INSERT INTO MEMBER VALUES(2,'Kevin','Coppey','Sion','4','1950','Place des Rats','kevin@yahoo.it','0798543125')
+INSERT INTO MEMBER VALUES(3,'Thomas','Luyet','Sion','8','1950','Chemin du D\u00e9sespoir','thomas@hes.ch','0798483545')
+INSERT INTO CATEGORY VALUES(10,'Horreur')
+INSERT INTO CATEGORY VALUES(20,'Romance')
+INSERT INTO WRITER VALUES(40,'Maverick','O''Banen','Le seul, l''unique')
+INSERT INTO WRITER VALUES(13,'Edgar Alan','Poe','Auteur de l''excellent Hello Kitty magazine')
+INSERT INTO BOOK VALUES(1,'Un drame sordide','201f','Fran\u00e7ais',300,'La Souris',NULL,10,13)
+INSERT INTO BOOK VALUES(2,'Une histoire d''amour','202f','Fran\u00e7ais',150,'Le Chat',NULL,20,40)
 COMMIT
-/*C2*/SET SCHEMA PUBLIC
-CONNECT USER SA
 DISCONNECT

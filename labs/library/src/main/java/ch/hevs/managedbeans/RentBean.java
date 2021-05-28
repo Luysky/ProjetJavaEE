@@ -1,5 +1,6 @@
 package ch.hevs.managedbeans;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class RentBean
 
     private List<Address> addresses;
     private List<Book> books;
+    private Book book;
     private List<Calendar> categories;
     private List<Member> members;
     private List<Writer> writers;
@@ -27,6 +29,7 @@ public class RentBean
 	private Library library;
 
 	private String Test;
+	private String transactionResult;
 
 
 
@@ -46,9 +49,17 @@ public class RentBean
 		message = "Click to populate DB ! One time only !";
 
 
+		//populateDatabase();
 
+		writers = new ArrayList<>();
+		//writers = library.getWriters();
 
+		books = new ArrayList<Book>();
 		//books = library.getBooks();
+
+
+
+
         //Test = goToTest();
 
     }
@@ -60,10 +71,22 @@ public class RentBean
         return "Test";
     }
 
+	// transactionResult
+	public String getTransactionResult () {
+		return transactionResult;
+	}
+
+	public void setTransactionResult(String transactionResult) {
+		this.transactionResult = transactionResult;
+	}
+
 
     public void populateDatabase(){
 
     	library.populateDatabase();
+		writers = library.getWriters();
+		books = library.getBooks();
+
 
 	}
 
@@ -78,6 +101,12 @@ public class RentBean
 		return books;
 	}
 
+	//Books
+	public List<Writer> getWriters(){
+		return writers;
+	}
+
+
 	public String getMessage() {
 		return message;
 	}
@@ -85,5 +114,47 @@ public class RentBean
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+	public String performBooking(int id) {
+
+		try {
+
+
+			//Flight selectedFlight = travel.getSelectedFlight(id);
+
+			Book selectedBook = library.getOneBook(id);
+
+			System.out.println("************************* "+selectedBook.getId() +"*****************************");
+
+			// Transfer
+			this.transactionResult = library.book(selectedBook);
+
+			// History
+			/*
+			try {
+				history = travel.getPassengerHistory();
+			}catch(Exception e) {
+				System.out.println("There is no history yet");
+			}
+
+			 */
+
+			// Bookings
+			/*
+			try {
+				bookings = travel.getBookings();
+			}catch(Exception e) {
+				System.out.println("There is no bookings yet");
+			}
+
+			 */
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "confirmationForm"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
+
+    }
 
 }

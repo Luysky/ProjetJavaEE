@@ -15,7 +15,8 @@ public class Writer extends Person {
 
 
     //@ManyToMany(mappedBy = "writers", cascade = { CascadeType.PERSIST })
-    @ManyToMany(mappedBy = "writers", cascade = { CascadeType.PERSIST })
+    //@ManyToMany(mappedBy = "writers", cascade = { CascadeType.PERSIST })
+    @OneToMany(mappedBy = "writer", cascade = { CascadeType.PERSIST } )
     //@JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idWriter"),
     //        inverseJoinColumns = @JoinColumn(name = "idBook"))
     private Set<Book> writtenBooks;
@@ -32,7 +33,7 @@ public class Writer extends Person {
 
     public Writer(String firstname, String lastname, int idWriter,
                    String biography) {
-        //super(firstname, lastname);
+        super(firstname, lastname);
         this.idWriter = idWriter;
         //this.writtenBooks = writtenBooks;
         this.biography = biography;

@@ -18,12 +18,12 @@ public class Book {
 
     //relation
     //@ManyToMany(mappedBy = "writtenBooks", cascade = { CascadeType.PERSIST })
-    @ManyToMany
-    @JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idBook"),
-                inverseJoinColumns = @JoinColumn(name = "idWriter"))
+    @ManyToOne
+    //@JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idBook"),
+      //          inverseJoinColumns = @JoinColumn(name = "idWriter"))
     //@JoinColumn(name = "writer_fk",nullable = false)
-    private Set<Writer> writers;
-
+    //private Set<Writer> writers;
+    private Writer writer;
 
 
 
@@ -51,16 +51,17 @@ public class Book {
 
     public Book(int idBook, String isbn,
                 String title, String language, String description,
-                int numberOfPages) {
+                int numberOfPages, Member borrower) {
         this.idBook = idBook;
         this.isbn = isbn;
         //this.writers = writers;
+        this.writer = writer;
         //this.category = category;
         this.title = title;
         this.language = language;
         this.description = description;
         this.numberOfPages = numberOfPages;
-        //this.borrower = borrower;
+        this.borrower = borrower;
     }
 
     public int getId() {
@@ -80,7 +81,7 @@ public class Book {
     }
 
 
-
+/*
     public Set<Writer> getWriters() {
         return writers;
     }
@@ -89,6 +90,17 @@ public class Book {
         this.writers = writers;
     }
 
+
+ */
+
+
+    public Writer getWriter() {
+        return writer;
+    }
+
+    public void setWriter(Writer writer) {
+        this.writer = writer;
+    }
 
 
     public Category getCategory() {

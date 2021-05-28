@@ -40,4 +40,51 @@
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
   <display-name>TP12-WEB-EJB-PC-EPC-DAO-E</display-name>
+
+
+<!--
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Secure Admin Page</web-resource-name>
+      <url-pattern>/faces/adminPanel.xhtml</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+-->
+<!--
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Secure Content</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>member</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
+
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Restricted Access!</realm-name>
+  </login-config>
+
+  <security-role>
+    <description>member</description>
+    <role-name>member</role-name>
+  </security-role>
+
+  <security-role>
+    <description>admin</description>
+    <role-name>admin</role-name>
+  </security-role>
+
+-->
+
+
 </web-app>
