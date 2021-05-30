@@ -28,11 +28,11 @@ public class Book {
 
 
     //relation
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     //@JoinColumn(name = "category_fk",nullable = false)
     private Category category;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     //@JoinColumn(name = "member_fk",nullable = false)
     private Member borrower;
 

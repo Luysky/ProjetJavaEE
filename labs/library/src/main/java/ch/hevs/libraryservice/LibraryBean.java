@@ -46,60 +46,44 @@ public class LibraryBean implements Library {
     @Override
     public String book(Book oneBook) throws Exception {
 
+        EntityTransaction tx = null;
+        try {
+
+
+            EntityManagerFactory emf = Persistence
+                    .createEntityManagerFactory("libraryPU");
+            EntityManager em = emf.createEntityManager();
+            tx = em.getTransaction();
+
+
+            tx.begin();
+
+
+            //TODO  mettre une JPQL et SAND dans la db
+            Member memberTest = new Member("Georges", "Sand",
+                    1,"0798252483", "sand@sandy.com");
+            em.persist(memberTest);
+            Address address1 = new Address("1950", "Place des Potences", "13", "Sion");
+            memberTest.setAddress(address1);
+            em.persist(memberTest);
 
 
 
-        Member memberTest = new Member();
-        memberTest.setId(3);
-        memberTest.setFirstname("Georges");
-        memberTest.setLastname("Sand");
-        memberTest.setEmail("transgender@gmail.com");
-        memberTest.setPhoneNumber("2135464894");
+            int idBook = oneBook.getId();
 
-        Address addressTest = new Address();
-        addressTest.setCity("Sion");
-        addressTest.setPostalCode("1950");
-        addressTest.setNumber("12");
-        addressTest.setStreet("Chemin de Tourbillon");
-
-        memberTest.setAddress(addressTest);
-
-        oneBook.setBorrower(memberTest);
+            Book book = em.find(Book.class,idBook);
+            book.setBorrower(memberTest);
 
 
-        Book bookSelected = em.merge(oneBook);
+            tx.commit();
 
 
-        em.persist(bookSelected);
 
+            } catch (Exception e) {
+            e.printStackTrace();
 
-        //System.out.println("*********FUCK******* "+bookSelected.getBorrower().firstname+" **************************");
-
-/*
-        // Check passenger name
-        String passengerName = ctx.getCallerPrincipal().getName();
-        Passenger passenger = getPassenger(passengerName);
-        Flight flightSelected = em.merge(flight);
-
-
-        Booking b1;
-
-        //New Booking
-        b1 = new Booking(new Date(),flightSelected,passenger);
-        flightSelected.reservePlace();
-        em.persist(flightSelected);
-        em.persist(b1);
-
-        String transactionResult="Success!";
-        if(flight.getPlaces() < 1) {
-            transactionResult="We are sorry, the is no more places for this flight !";
-            ctx.setRollbackOnly();
-        }else if(!ctx.isCallerInRole("passenger")){
-            transactionResult="You are not allowed to book !";
-            ctx.setRollbackOnly();
         }
 
- */
         //A SUPPRIMER !
         String transactionResult="Success!";
 
@@ -211,6 +195,8 @@ public class LibraryBean implements Library {
 
 
             tx.commit();
+
+
 
 
 

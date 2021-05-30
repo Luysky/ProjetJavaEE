@@ -19,4 +19,10 @@ INSERT INTO WRITER VALUES(13,'Edgar Alan','Poe','Auteur de l''excellent Hello Ki
 INSERT INTO BOOK VALUES(1,'Un drame sordide','201f','Fran\u00e7ais',300,'La Souris',NULL,10,13)
 INSERT INTO BOOK VALUES(2,'Une histoire d''amour','202f','Fran\u00e7ais',150,'Le Chat',NULL,20,40)
 COMMIT
+INSERT INTO MEMBER VALUES(1,'Georges','Sand','Sion','13','1950','Place des Potences','sand@sandy.com','0798252483')
+DELETE FROM BOOK WHERE IDBOOK=1
+INSERT INTO BOOK VALUES(1,'Un drame sordide','201f','Fran\u00e7ais',300,'La Souris',1,10,13)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+CONNECT USER SA
 DISCONNECT
