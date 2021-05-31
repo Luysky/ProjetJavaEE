@@ -32,6 +32,16 @@ public class LibraryBean implements Library {
     }
 
     @Override
+    public List<Book> getNonBorrowedBooks(){
+
+        Query query = em.createQuery("FROM Book b WHERE b.borrower = null");
+
+        return (List<Book>) query.getResultList();
+
+    }
+
+
+    @Override
     public Book getOneBook(int idBook) {
         Query query = em.createQuery("FROM Book b WHERE b.idBook = :idBook");
 
@@ -42,9 +52,32 @@ public class LibraryBean implements Library {
         return (Book) query.getSingleResult();
     }
 
+    public Member getMember(int idMember){
+
+        Query query = em.createQuery("FROM Member m WHERE m.idMember = :idMember");
+
+        query.setParameter("idMember", idMember);
+        //query.setParameter("idBook", 1);
+        //query.setParameter("arrival", arrival);
+
+        return (Member) query.getSingleResult();
+
+    }
+
+    public List<Member> getAllMembers(){
+
+        Query query = em.createQuery("FROM Member ");
+
+        //query.setParameter("idBook", 1);
+        //query.setParameter("arrival", arrival);
+
+        return (List<Member>) query.getResultList();
+
+    }
+
 
     @Override
-    public String book(Book oneBook) throws Exception {
+    public String book(Book oneBook, int currentMember) throws Exception {
 
         EntityTransaction tx = null;
         try {
@@ -58,25 +91,21 @@ public class LibraryBean implements Library {
 
             tx.begin();
 
+            //Car la gestion des users ne fonctionne pas !
+            Member memberTest = getMember(currentMember);
+            int idMember = memberTest.getId();
 
-            //TODO  mettre une JPQL et SAND dans la db
-            Member memberTest = new Member("Georges", "Sand",
-                    1,"0798252483", "sand@sandy.com");
-            em.persist(memberTest);
-            Address address1 = new Address("1950", "Place des Potences", "13", "Sion");
-            memberTest.setAddress(address1);
-            em.persist(memberTest);
-
+            Member member = em.find(Member.class,idMember);
 
 
             int idBook = oneBook.getId();
 
             Book book = em.find(Book.class,idBook);
-            book.setBorrower(memberTest);
+            book.setBorrower(member);
+
 
 
             tx.commit();
-
 
 
             } catch (Exception e) {
@@ -132,9 +161,6 @@ public class LibraryBean implements Library {
             member1.setAddress(address1);
             em.persist(member1);
 
-
-
-
             Member member2 = new Member("Thomas", "Luyet",
                     3,"0798483545", "thomas@hes.ch");
             em.persist(member2);
@@ -142,6 +168,12 @@ public class LibraryBean implements Library {
             member2.setAddress(address2);
             em.persist(member2);
 
+            Member member3 = new Member("Georges", "Sand",
+                    1,"0798252483", "sand@sandy.com");
+            em.persist(member3);
+            Address address3 = new Address("1950", "Place des Potences", "13", "Sion");
+            member3.setAddress(address3);
+            em.persist(member3);
 
 
             Category category1 = new Category(10,"Horreur");

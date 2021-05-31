@@ -31,6 +31,7 @@ public class RentBean
 	private String Test;
 	private String transactionResult;
 
+	private int currentMember;
 
 
 	private String message;
@@ -86,9 +87,12 @@ public class RentBean
     	library.populateDatabase();
 		writers = library.getWriters();
 		books = library.getBooks();
+		members = library.getAllMembers();
+		currentMember = 1;
 
 
 	}
+
 
 	public void showAllBooks() {
 		books = library.getBooks();
@@ -100,6 +104,36 @@ public class RentBean
 	public List<Book> getBooks(){
 		return books;
 	}
+
+	public List<Member>getMembers(){
+    	return members;
+	}
+
+
+	public List<Book> getUpdatedBooks(){
+
+    	books = library.getNonBorrowedBooks();
+
+    	return books;
+	}
+
+
+	public String performUpdateBookList() {
+
+		try {
+
+
+			getUpdatedBooks();
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "bookForm"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
+
+	}
+
 
 	//Books
 	public List<Writer> getWriters(){
@@ -115,19 +149,32 @@ public class RentBean
 		this.message = message;
 	}
 
-	public String performBooking(int id) {
+
+	public String performMember(int idMember) {
+
+		try {
+
+				currentMember=idMember;
+
+
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "bookForm"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
+
+	}
+
+
+	public String performBooking(int idBook) {
 
 		try {
 
 
-			//Flight selectedFlight = travel.getSelectedFlight(id);
+			Book selectedBook = library.getOneBook(idBook);
 
-			Book selectedBook = library.getOneBook(id);
-
-			System.out.println("************************* "+selectedBook.getId() +"*****************************");
-
-			// Transfer
-			this.transactionResult = library.book(selectedBook);
+			//TODO changer selectedBook + idMember
+			this.transactionResult = library.book(selectedBook,currentMember);
 
 			// History
 			/*

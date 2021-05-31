@@ -11,7 +11,11 @@
       <h:outputLabel value="Book result:"></h:outputLabel><h:outputLabel value=" #{rentBean.transactionResult}"></h:outputLabel>
       <br></br>
       <h:form>
-         <h:button value="Rent another book" outcome="bookForm"  style="border:none, background-color:blue"/>
+         <!--  <h:button value="Rent another book" outcome="bookForm"  style="border:none, background-color:blue"/>
+               -->
+
+         <h:commandButton value="Book" action="#{rentBean.performUpdateBookList}"></h:commandButton>
+
       </h:form>
    </ui:define>
 </ui:composition>

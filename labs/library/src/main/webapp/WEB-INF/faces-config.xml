@@ -14,10 +14,13 @@
 	<navigation-rule>
 		<display-name>welcomeBank.xhtml</display-name>
 		<from-view-id>/welcomeBank.xhtml</from-view-id>
+
+
 		<navigation-case>
-			<from-outcome>bookForm</from-outcome>
-			<to-view-id>/bookForm.xhtml</to-view-id>
+			<from-outcome>memberForm</from-outcome>
+			<to-view-id>/memberForm.xhtml</to-view-id>
 		</navigation-case>
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -34,6 +37,16 @@
 	<navigation-rule>
 		<display-name>confirmationForm.xhtml</display-name>
 		<from-view-id>/confirmationForm.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>bookForm</from-outcome>
+			<to-view-id>/bookForm.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<display-name>memberForm.xhtml</display-name>
+		<from-view-id>/memberForm.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>bookForm</from-outcome>
 			<to-view-id>/bookForm.xhtml</to-view-id>
