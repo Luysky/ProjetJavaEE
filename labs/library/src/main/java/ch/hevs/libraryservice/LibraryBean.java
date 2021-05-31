@@ -120,6 +120,63 @@ public class LibraryBean implements Library {
 
     }
 
+    @Override
+    public String member(Member member) throws Exception {
+
+        EntityTransaction tx = null;
+        try {
+
+
+            EntityManagerFactory emf = Persistence
+                    .createEntityManagerFactory("libraryPU");
+            EntityManager em = emf.createEntityManager();
+            tx = em.getTransaction();
+
+
+
+            tx.begin();
+
+
+
+            int idMember = member.getId();
+
+
+            Member memberToDelete = em.find(Member.class,idMember);
+
+
+            Set<Book>rentedBook =   memberToDelete.getBorrowedBook();
+
+
+            em.remove(memberToDelete);
+
+
+            if(rentedBook!=null){
+                for (Book b:rentedBook
+                ) {
+                    Book savedBook = b;
+                    savedBook.setBorrower(null);
+                    em.persist(savedBook);
+                }
+            }
+
+
+
+            tx.commit();
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+        //A SUPPRIMER !
+        String transactionResult="Success!";
+
+        return transactionResult;
+
+    }
+
 
     public List<Writer> getWriters() {
 

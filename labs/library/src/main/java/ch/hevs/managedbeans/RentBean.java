@@ -155,6 +155,8 @@ public class RentBean
 
 				currentMember=idMember;
 
+				System.out.println("********************** PerformMember = "+currentMember);
+
 
 			} catch (Exception e) {
 			e.printStackTrace();
@@ -172,28 +174,9 @@ public class RentBean
 
 			Book selectedBook = library.getOneBook(idBook);
 
-			//TODO changer selectedBook + idMember
 			this.transactionResult = library.book(selectedBook,currentMember);
 
-			// History
-			/*
-			try {
-				history = travel.getPassengerHistory();
-			}catch(Exception e) {
-				System.out.println("There is no history yet");
-			}
-
-			 */
-
-			// Bookings
-			/*
-			try {
-				bookings = travel.getBookings();
-			}catch(Exception e) {
-				System.out.println("There is no bookings yet");
-			}
-
-			 */
+			performUpdateBookList();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -202,5 +185,36 @@ public class RentBean
 		return "confirmationForm"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
 
     }
+
+	public String performDelete(int idMember) {
+
+		try {
+
+			currentMember = idMember;
+
+
+			Member selectedMember = library.getMember(currentMember);
+
+			System.out.println("********************** Après Member ");
+
+			//this.transactionResult = library.book(selectedBook,currentMember);
+
+			//this.transactionResult = library.book(selectedBook,currentMember);
+			this.transactionResult = library.member(selectedMember);
+
+
+
+			members = library.getAllMembers();
+
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return "confirmationForm"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
+
+	}
+
 
 }

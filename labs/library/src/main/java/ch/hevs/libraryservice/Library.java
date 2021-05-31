@@ -12,6 +12,8 @@ public interface Library {
 
     public String book(Book oneBook, int idMember) throws Exception;
 
+    public String member(Member member)throws Exception;
+
     public List<Book> getBooks();
 
     public List<Book> getNonBorrowedBooks();
@@ -23,6 +25,7 @@ public interface Library {
     public Member getMember(int idMember);
 
     public List<Member> getAllMembers();
+
 
     public void populateDatabase();
 }

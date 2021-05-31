@@ -14,18 +14,32 @@
          <br></br>
 
 
-         <h:outputText value="Membre : "></h:outputText>
+         <table class="table table-bordered">
+
+         <thead>
+         <tr>
+            <th>Id </th>
+            <th>Nom</th>
+            <th>Prénom</th>
+         </tr>
+         </thead>
 
 
-         <select name="idMembers">
-            <c:forEach items="${rentBean.members}" var="idMembers">
-               <option value="${idMembers.id}">${idMembers.id}</option>
 
-            </c:forEach>
-            <h:commandButton value="Sélectionner" action="bookForm"></h:commandButton>
-         </select>
+         <tbody>
+         <c:forEach var="member" items="${rentBean.members}">
+         <tr>
+            <td>${member.id}</td>
+            <td>${member.lastname}</td>
+            <td>${member.firstname}</td>
+            <td><h:commandButton value="Réserver" action="#{rentBean.performMember(member.id)}"></h:commandButton></td>
+            <td><h:commandButton value="Supprimer" action="#{rentBean.performDelete(member.id)}"></h:commandButton></td>
+         </tr>
+         </c:forEach>
+         </tbody>
 
-         <br/>
+         </table>
+
          <h:commandButton value="Retour menu" action="welcomeBank"></h:commandButton>
 
       </h:form>

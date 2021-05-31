@@ -20,7 +20,8 @@ public class Member extends Person {
     public String phoneNumber;
     public String email;
 
-    @OneToMany(mappedBy = "borrower", cascade = { CascadeType.PERSIST })
+    @OneToMany(mappedBy = "borrower", cascade = { CascadeType.ALL })
+    //@OneToMany(mappedBy = "borrower")
     //@JoinColumn(name = "book_fk",nullable = false)
     private Set<Book> borrowedBook;
 

@@ -21,6 +21,11 @@
 			<to-view-id>/memberForm.xhtml</to-view-id>
 		</navigation-case>
 
+		<navigation-case>
+			<from-outcome>deleteMemberForm</from-outcome>
+			<to-view-id>/deleteMemberForm.xhtml</to-view-id>
+		</navigation-case>
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -29,6 +34,11 @@
 		<navigation-case>
 			<from-outcome>#{renBean.performBooking}</from-outcome>
 			<to-view-id>/confirmationForm.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>welcomeBank</from-outcome>
+			<to-view-id>/welcomeBank.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>
@@ -53,17 +63,6 @@
 		</navigation-case>
 	</navigation-rule>
 
-<!--
-	<navigation-rule>
-		<display-name>bookForm.xhtml</display-name>
-		<from-view-id>/bookForm.xhtml</from-view-id>
-	</navigation-rule>
 
-	<navigation-rule>
-		<display-name>confirmationForm.xhtml</display-name>
-		<from-view-id>/confirmationForm.xhtml</from-view-id>
-	</navigation-rule>
-
-	-->
 
 </faces-config>
