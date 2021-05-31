@@ -71,11 +71,15 @@
 						<td><h:commandButton value="Book" action="#{rentBean.performBooking(book.id)}"></h:commandButton></td>
 					</tr>
 				</c:forEach>
+
 				</tbody>
 
 			</table>
 
         </h:form>
+
+		<h:commandButton value="Retour menu" action="welcomeBank"></h:commandButton>
+
     </ui:define>
 </ui:composition>
 </html>

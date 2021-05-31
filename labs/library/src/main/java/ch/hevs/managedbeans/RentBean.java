@@ -58,19 +58,18 @@ public class RentBean
 		books = new ArrayList<Book>();
 		//books = library.getBooks();
 
+		writers = library.getWriters();
+		books = library.getBooks();
+		members = library.getAllMembers();
+		currentMember = 1;
+
+		performUpdateBookList();
 
 
-
-        //Test = goToTest();
 
     }
 
 
-
-
-    public String goToTest(){
-        return "Test";
-    }
 
 	// transactionResult
 	public String getTransactionResult () {
@@ -85,11 +84,11 @@ public class RentBean
     public void populateDatabase(){
 
     	library.populateDatabase();
+
 		writers = library.getWriters();
 		books = library.getBooks();
 		members = library.getAllMembers();
 		currentMember = 1;
-
 
 	}
 
