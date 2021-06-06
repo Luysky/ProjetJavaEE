@@ -57,9 +57,20 @@ public class LibraryBean implements Library {
         return (List<Member>) query.getResultList();
     }
 
+    //find the number of time a member has borrowed a book
+    public long getNumberBorrowedBooks(int idMember){
+
+        Query query = em.createQuery( "SELECT count (o) FROM Book b, IN (b.borrower) " +
+                "o WHERE b.borrower.idMember = :idMember");
+        query.setParameter("idMember", idMember);
+        return (long) query.getSingleResult();
+    }
+
     //method use to book
     @Override
     public String book(Book oneBook, int currentMember) throws Exception {
+
+        String transactionResult="Error";
 
         EntityTransaction tx = null;
         try {
@@ -90,6 +101,16 @@ public class LibraryBean implements Library {
             em.persist(book);
 
 
+            long number = getNumberBorrowedBooks(idMember);
+
+
+            if(number >= 2) {
+                transactionResult="Le membre a déjà loué deux livres !";
+                ctx.setRollbackOnly();
+                return transactionResult;
+            }
+
+
             tx.commit();
 
 
@@ -97,7 +118,7 @@ public class LibraryBean implements Library {
             e.printStackTrace();
         }
 
-        String transactionResult="Success!";
+        transactionResult = "Succès";
 
         return transactionResult;
 
@@ -227,6 +248,14 @@ public class LibraryBean implements Library {
             book2.setWriter(writer2);
 
             em.persist(book2);
+
+
+            Book book3 = new Book(3,"166e", "Madame Brisby et les rats de NIHM",
+                    "Français","Aventure",250,null);
+            book3.setCategory(category2);
+            book3.setWriter(writer2);
+
+            em.persist(book3);
 
 
             tx.commit();
