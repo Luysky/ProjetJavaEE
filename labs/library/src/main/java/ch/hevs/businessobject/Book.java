@@ -1,7 +1,7 @@
 package ch.hevs.businessobject;
 
 import javax.persistence.*;
-import java.util.Set;
+
 
 @Entity
 @Table(name="Book")
@@ -11,39 +11,27 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idBook;
 
-
     private String isbn;
 
-
-
     //relation
-    //@ManyToMany(mappedBy = "writtenBooks", cascade = { CascadeType.PERSIST })
     @ManyToOne
-    //@JoinTable(name = "Book_Writer",joinColumns = @JoinColumn(name = "idBook"),
-      //          inverseJoinColumns = @JoinColumn(name = "idWriter"))
-    //@JoinColumn(name = "writer_fk",nullable = false)
-    //private Set<Writer> writers;
     private Writer writer;
-
-
 
     //relation
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    //@JoinColumn(name = "category_fk",nullable = false)
     private Category category;
 
+    //relation
     @ManyToOne(cascade = {CascadeType.REMOVE})
-    //@JoinColumn(name = "member_fk",nullable = false)
     private Member borrower;
 
     private String title;
     private String language;
     private String description;
     private int numberOfPages;
-    //private boolean borrowed;
 
 
-
+    //constructors
     public Book(){
 
     }
@@ -54,9 +42,6 @@ public class Book {
                 int numberOfPages, Member borrower) {
         this.idBook = idBook;
         this.isbn = isbn;
-        //this.writers = writers;
-        this.writer = writer;
-        //this.category = category;
         this.title = title;
         this.language = language;
         this.description = description;
@@ -72,6 +57,7 @@ public class Book {
         this.idBook = idBook;
     }
 
+
     public String getIsbn() {
         return isbn;
     }
@@ -79,19 +65,6 @@ public class Book {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-
-
-/*
-    public Set<Writer> getWriters() {
-        return writers;
-    }
-
-    public void setWriters(Set<Writer> writers) {
-        this.writers = writers;
-    }
-
-
- */
 
 
     public Writer getWriter() {
@@ -111,6 +84,7 @@ public class Book {
         this.category = category;
     }
 
+
     public String getTitle() {
         return title;
     }
@@ -118,6 +92,7 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
 
     public String getLanguage() {
         return language;
@@ -127,6 +102,7 @@ public class Book {
         this.language = language;
     }
 
+
     public String getDescription() {
         return description;
     }
@@ -135,6 +111,7 @@ public class Book {
         this.description = description;
     }
 
+
     public int getNumberOfPages() {
         return numberOfPages;
     }
@@ -142,6 +119,7 @@ public class Book {
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
     }
+
 
     public Member getBorrower() {
         return borrower;

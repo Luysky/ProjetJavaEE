@@ -12,9 +12,8 @@
 
 
 	<navigation-rule>
-		<display-name>welcomeBank.xhtml</display-name>
-		<from-view-id>/welcomeBank.xhtml</from-view-id>
-
+		<display-name>welcomeForm.xhtml</display-name>
+		<from-view-id>/welcomeForm.xhtml</from-view-id>
 
 		<navigation-case>
 			<from-outcome>memberForm</from-outcome>
@@ -37,8 +36,8 @@
 			<redirect/>
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>welcomeBank</from-outcome>
-			<to-view-id>/welcomeBank.xhtml</to-view-id>
+			<from-outcome>welcomeForm</from-outcome>
+			<to-view-id>/welcomeForm.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
 	</navigation-rule>

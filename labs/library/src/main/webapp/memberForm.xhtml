@@ -32,7 +32,7 @@
             <td>${member.id}</td>
             <td>${member.lastname}</td>
             <td>${member.firstname}</td>
-            <td><h:commandButton value="Réserver" action="#{rentBean.performMember(member.id)}"></h:commandButton></td>
+            <td><h:commandButton value="Réserver" action="#{rentBean.performCurrentMember(member.id)}"></h:commandButton></td>
             <td><h:commandButton value="Supprimer" action="#{rentBean.performDelete(member.id)}"></h:commandButton></td>
          </tr>
          </c:forEach>
@@ -40,7 +40,7 @@
 
          </table>
 
-         <h:commandButton value="Retour menu" action="welcomeBank"></h:commandButton>
+         <h:commandButton value="Retour menu" action="welcomeForm"></h:commandButton>
 
       </h:form>
    </ui:define>

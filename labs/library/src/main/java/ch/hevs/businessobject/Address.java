@@ -1,10 +1,7 @@
 package ch.hevs.businessobject;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.Set;
+
 
 @Embeddable
 public class Address {
@@ -13,6 +10,18 @@ public class Address {
     private String street;
     private String number;
     private String city;
+
+
+    // constructors
+    public Address() {
+    }
+
+    public Address(String postalCode, String street, String number, String city) {
+        this.postalCode = postalCode;
+        this.street = street;
+        this.number = number;
+        this.city = city;
+    }
 
     // postalCode
     public String getPostalCode() {
@@ -38,22 +47,11 @@ public class Address {
         this.city = city;
     }
 
+    // numbers
     public String getNumber() {
         return number;
     }
-
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    // constructors
-    public Address() {
-    }
-
-    public Address(String postalCode, String street, String number, String city) {
-        this.postalCode = postalCode;
-        this.street = street;
-        this.number = number;
-        this.city = city;
     }
 }

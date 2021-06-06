@@ -2,6 +2,8 @@ package ch.hevs.exception;
 
 public class LibraryException extends RuntimeException {
 
+	//A UTILISER AU BESOIN
+
 	public LibraryException() {
 		super();
 	}

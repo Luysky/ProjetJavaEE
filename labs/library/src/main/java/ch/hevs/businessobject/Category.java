@@ -14,10 +14,11 @@ public class Category {
 
     private String genre;
 
+    //relation
     @OneToMany(mappedBy = "category", cascade = { CascadeType.PERSIST })
-    //@JoinColumn(name = "book_fk",nullable = false)
     private Set<Book> book;
 
+    //constructors
     public Category(){
 
     }
@@ -25,13 +26,11 @@ public class Category {
     public Category(int idCategory, String genre) {
         this.idCategory = idCategory;
         this.genre = genre;
-        //this.book = book;
     }
 
     public int getId() {
         return idCategory;
     }
-
     public void setId(int idCategory) {
         this.idCategory = idCategory;
     }
@@ -39,7 +38,6 @@ public class Category {
     public String getGenre() {
         return genre;
     }
-
     public void setGenre(String genre) {
         this.genre = genre;
     }
@@ -47,20 +45,9 @@ public class Category {
     public Set<Book> getBook() {
         return book;
     }
-
     public void setBook(Set<Book> book) {
         this.book = book;
     }
 
-    /*
-Fantasy.
-Sci-Fi.
-Mystery.
-Thriller.
-Romance.
-Westerns.
-Dystopian.
-Contemporary
- */
 
 }

@@ -26,6 +26,5 @@ public interface Library {
 
     public List<Member> getAllMembers();
 
-
     public void populateDatabase();
 }

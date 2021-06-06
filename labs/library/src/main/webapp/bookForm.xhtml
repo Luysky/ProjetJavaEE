@@ -11,33 +11,11 @@
     <ui:define name="content">
     	<h:form>
 
-			<!--
-			<h:outputLabel value="Sélection du numéro de membre:"></h:outputLabel>
-			<br></br>
-
-
-			<h:outputText value="Membre : "></h:outputText>
-
-
-			<select name="idMembers">
-				<c:forEach items="${rentBean.members}" var="idMembers">
-					<option value="${idMembers.id}">${idMembers.id}}</option>
-
-				</c:forEach>
-			</select>
-			-->
-
 
 			<br/>
 
-
         	<h:outputLabel value="Liste des livres:"></h:outputLabel>
         	<br></br>
-
-			<!--
-        	<h:panelGrid columns="6">
-        	</h:panelGrid>
-        	-->
 
 			<div>
 			</div>
@@ -55,7 +33,6 @@
 					<th>Pages</th>
 				</tr>
 				</thead>
-
 
 				<tbody>
 				<c:forEach var="book" items="${rentBean.books}">
@@ -76,7 +53,7 @@
 
 			</table>
 
-			<h:commandButton value="Retour menu" action="welcomeBank"></h:commandButton>
+			<h:commandButton value="Retour menu" action="welcomeForm"></h:commandButton>
 
         </h:form>
 
