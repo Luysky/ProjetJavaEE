@@ -146,18 +146,24 @@ public class LibraryBean implements Library {
 
             Set<Book>rentedBook =   memberToDelete.getBorrowedBook();
 
-
-            em.remove(memberToDelete);
-
-
-            if(rentedBook!=null){
+            if(!rentedBook.isEmpty()){
+                System.out.println("*************************J'ai passé ici");
                 for (Book b:rentedBook
                 ) {
                     Book savedBook = b;
                     savedBook.setBorrower(null);
                     em.persist(savedBook);
+
                 }
             }
+
+
+
+            System.out.println("******************MEMBER TO DELETE = "+memberToDelete.getId());
+            em.remove(memberToDelete);
+
+
+
 
 
 

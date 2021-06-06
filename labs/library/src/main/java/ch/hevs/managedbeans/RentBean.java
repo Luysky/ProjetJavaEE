@@ -42,10 +42,9 @@ public class RentBean
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
 
-    	//Renommer nom du chemin d acces snap
+    	//JNDI
 		library = (Library) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.libraryservice.Library");
 
-		//bank = (Bank) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/BankBean!ch.hevs.bankservice.Bank");
 
 		message = "Click to populate DB ! One time only !";
 
@@ -195,13 +194,13 @@ public class RentBean
 
 			Member selectedMember = library.getMember(currentMember);
 
-			System.out.println("********************** Après Member ");
 
 			//this.transactionResult = library.book(selectedBook,currentMember);
 
 			//this.transactionResult = library.book(selectedBook,currentMember);
 			this.transactionResult = library.member(selectedMember);
 
+			books = getUpdatedBooks();
 
 
 			members = library.getAllMembers();

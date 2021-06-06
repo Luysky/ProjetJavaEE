@@ -32,7 +32,7 @@ public class Book {
     //@JoinColumn(name = "category_fk",nullable = false)
     private Category category;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.REMOVE})
     //@JoinColumn(name = "member_fk",nullable = false)
     private Member borrower;
 
