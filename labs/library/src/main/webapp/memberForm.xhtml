@@ -10,7 +10,7 @@
    <ui:define name="content">
 
       <h:form>
-         <h:outputLabel value="Sélection du numéro de membre:"></h:outputLabel>
+         <h1>Liste des membres</h1>
          <br></br>
 
 
@@ -29,18 +29,18 @@
          <tbody>
          <c:forEach var="member" items="${rentBean.members}">
          <tr>
-            <td>${member.id}</td>
-            <td>${member.lastname}</td>
-            <td>${member.firstname}</td>
-            <td><h:commandButton value="Réserver" action="#{rentBean.performCurrentMember(member.id)}"></h:commandButton></td>
-            <td><h:commandButton value="Supprimer" action="#{rentBean.performDelete(member.id)}"></h:commandButton></td>
+            <td style="white-space: nowrap">${member.id}</td>
+            <td style="white-space: nowrap">${member.lastname}</td>
+            <td style="white-space: nowrap">${member.firstname}</td>
+            <td style="width: 100px"><h:commandButton value="Réserver" action="#{rentBean.performCurrentMember(member.id)}"></h:commandButton></td>
+            <td style="width: 100px"><h:commandButton value="Supprimer" style="background-color: crimson; color: ivory" action="#{rentBean.performDelete(member.id)}"></h:commandButton></td>
          </tr>
          </c:forEach>
          </tbody>
 
          </table>
 
-         <h:commandButton value="Retour menu" action="welcomeForm"></h:commandButton>
+         <h:commandButton value="Retour menu" action="welcomeForm" image="https://i.imgur.com/EevGWjs.png" style="height: 40px; width: 40px"></h:commandButton>
 
       </h:form>
    </ui:define>

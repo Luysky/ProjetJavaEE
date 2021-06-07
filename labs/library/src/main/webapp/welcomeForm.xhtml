@@ -8,21 +8,48 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
-        <h:outputLabel value="Bienvenue à Book a Book"></h:outputLabel>
+
+
+
         <br></br>
-        <h:form>
+        <h1>Bienvenue à Book a Book</h1>
+        <br/>
+        <h:form style="text-align: center; vertical-align: middle">
 
 
-            <div style="width:100px; margin:auto">
-                <h:commandButton value="Populate" action="#{rentBean.populateDatabase}" class="btn btn-danger">
+            <div style="width:100px; margin:auto; float:right; margin-top: -135px">
+                <h:commandButton value="Populate" style="background-color: crimson; color: ivory"
+                                 action="#{rentBean.populateDatabase}" class="btn btn-danger">
                 </h:commandButton>
+            </div>
+            <div style="float: right; margin-top: -130px; margin-right: 100px; font-weight: bold">
                 <h:outputText value="#{rentBean.message}" />
             </div>
 
 
-            <h:commandButton value="Click" action="memberForm">
-                <h:outputText value="Selection du membre" />
 
+
+            <h:commandButton value="Start" action="memberForm" style="width: 150px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            color: #282d32;
+            background: #f0f9ff;
+            border: 2px solid #282d32;
+            box-shadow: 5px 5px 0 #282d32,
+            -5px -5px 0 #282d32,
+            -5px 5px 0 #282d32,
+            5px -5px 0 #282d32;
+            transition: 500ms ease-in-out;
+            box-shadow: 20px 5px 0 #282d32, -20px -5px 0 #282d32;outline: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-webkit-tap-highlight-color: transparent;">
             </h:commandButton>
 
 

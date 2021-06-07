@@ -6,7 +6,7 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
+
 
 @Stateless
 public class LibraryBean implements Library {
@@ -40,6 +40,13 @@ public class LibraryBean implements Library {
         Query query = em.createQuery("FROM Book b WHERE b.idBook = :idBook");
         query.setParameter("idBook", idBook);
         return (Book) query.getSingleResult();
+    }
+
+    @Override
+    public List<Book> getMultipleBooks(Member borrower) {
+        Query query = em.createQuery("FROM Book b WHERE b.borrower = :borrower");
+        query.setParameter("borrower", borrower);
+        return (List<Book>) query.getResultList();
     }
 
     //return only one member
@@ -98,7 +105,7 @@ public class LibraryBean implements Library {
 
             //set the borrower member
             book.setBorrower(member);
-            em.persist(book);
+            em.merge(book);
 
 
             long number = getNumberBorrowedBooks(idMember);
@@ -118,7 +125,7 @@ public class LibraryBean implements Library {
             e.printStackTrace();
         }
 
-        transactionResult = "Succès";
+        transactionResult = "Le livre a bien été loué !";
 
         return transactionResult;
 
@@ -143,21 +150,25 @@ public class LibraryBean implements Library {
             //retrieve the selected member from the db
             Member memberToDelete = em.find(Member.class,idMember);
 
-            //retrieve the list of the borrowed books for the member to be delete
-            Set<Book>rentedBook = memberToDelete.getBorrowedBook();
 
-            //delete the member from the db
-            em.remove(memberToDelete);
+            //Private joke about our despair with this last point during the development...
+            //cthulhu enable us to stock all the books with the same idMember
+            List<Book>cthulhu = getMultipleBooks(member);
 
-            //set all borrowed books to null and free to be borrowed again
-            if(!rentedBook.isEmpty()){
-                for (Book b:rentedBook
+            //If the collection is not null we reset the borrower column for each book
+            if(cthulhu.size()!=0){
+                for (Book b:cthulhu
                 ) {
                     Book savedBook = b;
                     savedBook.setBorrower(null);
-                    em.persist(savedBook);
+                    em.merge(savedBook);
                 }
+
             }
+
+
+            //delete the member from the db
+            em.remove(memberToDelete);
 
 
             tx.commit();
@@ -168,7 +179,7 @@ public class LibraryBean implements Library {
             e.printStackTrace();
         }
 
-        String transactionResult="Success!";
+        String transactionResult="Le membre a bien été supprimé de la base de donnée !";
 
         return transactionResult;
 

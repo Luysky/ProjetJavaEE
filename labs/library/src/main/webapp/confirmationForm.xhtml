@@ -8,12 +8,13 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
    <ui:define name="content">
-      <h:outputLabel value="Book result:"></h:outputLabel><h:outputLabel value=" #{rentBean.transactionResult}"></h:outputLabel>
+      <h:outputLabel style="font-weight: bold; font-family: 'Palatino Linotype'">
+      </h:outputLabel><h:outputLabel value=" #{rentBean.transactionResult}"></h:outputLabel>
       <br></br>
       <h:form>
 
          <br/>
-         <h:commandButton value="Retour menu" action="welcomeForm"></h:commandButton>
+         <h:commandButton value="Retour menu" action="welcomeForm" image="https://i.imgur.com/EevGWjs.png" style="height: 40px; width: 40px"></h:commandButton>
 
 
       </h:form>

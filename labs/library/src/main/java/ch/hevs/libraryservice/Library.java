@@ -20,6 +20,8 @@ public interface Library {
 
     public Book getOneBook(int idBook);
 
+    public List<Book> getMultipleBooks(Member member);
+
     public List<Writer> getWriters();
 
     public Member getMember(int idMember);

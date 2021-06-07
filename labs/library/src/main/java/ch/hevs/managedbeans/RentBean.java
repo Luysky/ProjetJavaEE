@@ -35,7 +35,7 @@ public class RentBean
 		library = (Library) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/LibraryBean!ch.hevs.libraryservice.Library");
 
 
-		message = "Click to populate DB ! One time only !";
+		message = "Cliquer lors de la première exécution -> ";
 
 
 		//instanciate the variables of writers and books
@@ -140,6 +140,7 @@ public class RentBean
 			currentMember = idMember;
 
 			Member selectedMember = library.getMember(currentMember);
+
 			this.transactionResult = library.member(selectedMember);
 
 			//when a member is deleted all his books are available again
