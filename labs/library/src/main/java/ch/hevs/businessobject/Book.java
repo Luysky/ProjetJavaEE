@@ -8,7 +8,8 @@ import javax.persistence.*;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name= "Book_sequence", sequenceName = "Book_sequence_ID", initialValue=1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "Book_sequence")
     private int idBook;
 
     private String isbn;
@@ -37,10 +38,9 @@ public class Book {
     }
 
 
-    public Book(int idBook, String isbn,
+    public Book(String isbn,
                 String title, String language, String description,
                 int numberOfPages, Member borrower) {
-        this.idBook = idBook;
         this.isbn = isbn;
         this.title = title;
         this.language = language;

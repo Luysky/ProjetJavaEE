@@ -12,7 +12,8 @@ import java.util.Set;
 public class Member extends Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name= "Member_sequence", sequenceName = "Member_sequence_ID", initialValue=1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "Member_sequence")
     private int idMember;
 
 
@@ -32,10 +33,9 @@ public class Member extends Person {
 
     }
 
-    public Member(String firstname, String lastname, int idMember,
+    public Member(String firstname, String lastname,
                   String phoneNumber, String email,Set<Book> borrowedBook) {
         super(firstname, lastname);
-        this.idMember = idMember;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.borrowedBook = borrowedBook;

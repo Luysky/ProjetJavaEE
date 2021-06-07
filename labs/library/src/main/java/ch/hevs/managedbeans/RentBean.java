@@ -19,13 +19,17 @@ public class RentBean
 
     private List<Book> books;
     private List<Member> members;
+    private List<Integer> membersId;
+    private int memberId;
     private List<Writer> writers;
 
 	private String transactionResult;
 	private int currentMember;
 	private String message;
-    
-    @PostConstruct
+
+
+
+	@PostConstruct
     public void initialize() throws NamingException {
     	
     	// use JNDI to inject reference to bank EJB
@@ -165,5 +169,32 @@ public class RentBean
 		this.message = message;
 	}
 
+	public int getMemberId() {
+		return memberId;
+	}
 
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
+	}
+
+	public List<Integer> getMembersId() {
+		List<Member>list = getMembers();
+
+		List<Integer>listTemp = new ArrayList<>();
+
+		for (Member m:list
+			 ) {
+			listTemp.add(m.getId());
+		}
+		membersId = listTemp;
+		return membersId;
+	}
+
+	public void setMembersId(List<Integer> membersId) {
+		this.membersId = membersId;
+	}
+
+	public void filterMember(){
+
+	}
 }

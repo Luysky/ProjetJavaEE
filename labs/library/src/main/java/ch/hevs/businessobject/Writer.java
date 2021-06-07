@@ -9,7 +9,8 @@ import java.util.Set;
 public class Writer extends Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name= "Writer_sequence", sequenceName = "Writer_sequence_ID", initialValue=1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "Writer_sequence")
     private int idWriter;
 
     //relation
@@ -23,10 +24,8 @@ public class Writer extends Person {
 
     }
 
-    public Writer(String firstname, String lastname, int idWriter,
-                   String biography) {
+    public Writer(String firstname, String lastname,String biography) {
         super(firstname, lastname);
-        this.idWriter = idWriter;
         this.biography = biography;
     }
 

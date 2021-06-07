@@ -9,7 +9,8 @@ public class Category {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name= "Category_sequence", sequenceName = "Category_sequence_ID", initialValue=1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "Category_sequence")
     private int idCategory;
 
     private String genre;
@@ -23,8 +24,7 @@ public class Category {
 
     }
 
-    public Category(int idCategory, String genre) {
-        this.idCategory = idCategory;
+    public Category(String genre) {
         this.genre = genre;
     }
 

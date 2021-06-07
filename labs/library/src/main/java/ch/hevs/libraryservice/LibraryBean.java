@@ -57,12 +57,14 @@ public class LibraryBean implements Library {
         return (Member) query.getSingleResult();
     }
 
+
     //return all members
     public List<Member> getAllMembers(){
 
         Query query = em.createQuery("FROM Member ");
         return (List<Member>) query.getResultList();
     }
+
 
     //find the number of time a member has borrowed a book
     public long getNumberBorrowedBooks(int idMember){
@@ -207,53 +209,60 @@ public class LibraryBean implements Library {
             tx.begin();
 
             Member member1 = new Member("Kevin", "Coppey",
-                    2,"0798543125", "kevin@yahoo.it",null);
+                    "0798543125", "kevin@yahoo.it",null);
             em.persist(member1);
             Address address1 = new Address("1950", "Place des Rats", "4", "Sion");
             member1.setAddress(address1);
             em.persist(member1);
 
             Member member2 = new Member("Thomas", "Luyet",
-                    3,"0798483545", "thomas@hes.ch",null);
+                    "0798483545", "thomas@hes.ch",null);
             em.persist(member2);
             Address address2 = new Address("1950", "Chemin du Désespoir", "8", "Sion");
             member2.setAddress(address2);
             em.persist(member2);
 
             Member member3 = new Member("Georges", "Sand",
-                    1,"0798252483", "sand@sandy.com",null);
+                    "0798252483", "sand@sandy.com",null);
             em.persist(member3);
             Address address3 = new Address("1950", "Place des Potences", "13", "Sion");
             member3.setAddress(address3);
             em.persist(member3);
 
 
-            Category category1 = new Category(10,"Horreur");
+            Category category1 = new Category("Horreur");
             em.persist(category1);
 
 
-            Category category2 = new Category(20,"Romance");
+            Category category2 = new Category("Romance");
             em.persist(category2);
 
+            Category category3 = new Category("Policier");
+            em.persist(category3);
 
-            Writer writer1 = new Writer("Edgar Alan","Poe",13,
+
+            Writer writer1 = new Writer("Edgar Alan","Poe",
                     "Auteur de l'excellent Hello Kitty magazine");
             em.persist(writer1);
 
 
-            Writer writer2 = new Writer("Maverick","O'Banen",40,
+            Writer writer2 = new Writer("Maverick","O'Banen",
                     "Le seul, l'unique");
             em.persist(writer2);
 
+            Writer writer3 = new Writer("Michel","Moatti",
+                    "Docteur en sociologie des médias");
+            em.persist(writer3);
 
-            Book book1 = new Book(1,"201f", "La Souris",
+
+            Book book1 = new Book("201f", "La Souris",
                     "Français","Un drame sordide",300,null);
             book1.setCategory(category1);
             book1.setWriter(writer1);
             em.persist(book1);
 
 
-            Book book2 = new Book(2,"202f", "Le Chat",
+            Book book2 = new Book("202f", "Le Chat",
                     "Français","Une histoire d'amour",150,null);
             book2.setCategory(category2);
             book2.setWriter(writer2);
@@ -261,12 +270,20 @@ public class LibraryBean implements Library {
             em.persist(book2);
 
 
-            Book book3 = new Book(3,"166e", "Madame Brisby et les rats de NIHM",
+            Book book3 = new Book("166e", "Madame Brisby et les rats de NIHM",
                     "Français","Aventure",250,null);
             book3.setCategory(category2);
             book3.setWriter(writer2);
 
             em.persist(book3);
+
+
+            Book book4 = new Book("342a", "Retour à Whitechapel",
+                    "Français","Drame de guerre",432,null);
+            book4.setCategory(category3);
+            book4.setWriter(writer3);
+
+            em.persist(book4);
 
 
             tx.commit();
